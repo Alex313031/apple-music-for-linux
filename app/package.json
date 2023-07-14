@@ -5,15 +5,11 @@
   "author": "Marcus Tomlinson",
   "version": "0.8.1",
   "description": "Apple Music for Linux",
-  "main": "./app/main.js",
+  "main": "./main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder --dir",
-    "dist": "electron-builder",
-    "clean": "rimraf dist && rimraf app/node_modules && rimraf node_modules",
-    "distclean": "rimraf dist",
-    "burn": "rimraf package-lock.json && rimraf app/package-lock.json",
-    "postinstall": "electron-builder install-app-deps"
+    "clean": "rimraf node_modules",
+    "burn": "rimraf package-lock.json"
   },
   "repository": "https://github.com/cross-platform/apple-music-for-linux",
   "license": "GPL-3.0",
@@ -23,7 +19,6 @@
   },
   "devDependencies": {
     "electron": "https://github.com/castlabs/electron-releases#v15.5.7-wvvmp",
-    "electron-builder": "22.14.3",
     "rimraf": "3.0.2"
   }
 }

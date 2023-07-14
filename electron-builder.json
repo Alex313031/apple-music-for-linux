@@ -1,0 +1,61 @@
+{
+  "electronVersion": "15.5.7",
+  "electronDownload": {
+    "version": "15.5.7-wvvmp",
+    "mirror": "https://github.com/castlabs/electron-releases/releases/download/v"
+  },
+  "asar": true,
+  "appId": "apple-music-for-linux",
+  "productName": "Apple Music",
+  "generateUpdatesFilesForAllChannels": false,
+  "directories": {
+    "app": "./app",
+    "buildResources": "assets",
+    "output": "dist"
+  },
+  "extraFiles": [
+    {
+      "from": "assets/icon64.png"
+    }
+  ],
+  "linux": {
+    "target": [
+      "zip",
+      "AppImage",
+      "deb",
+      "snap"
+    ],
+    "maintainer": "Alex313031",
+    "vendor": "Alex313031",
+    "synopsis": "Electron based Web Video Services Player. Supporting Netflix, Youtube, Twitch, Floatplane and More.",
+    "category": "AudioVideo",
+    "executableName": "apple-music-for-linux",
+    "artifactName": "apple-music-linux_${version}_${arch}.${ext}",
+    "desktop": {
+      "Name": "Apple Music",
+      "StartupWMClass": "apple-music-for-linux",
+      "Keywords": "apple;music;electron;",
+      "Icon": "apple-music-for-linux"
+    }
+  },
+  "snap": {
+    "grade": "stable",
+    "confinement": "strict",
+    "plugs": [
+      "audio-playback",
+      "browser-support",
+      "desktop",
+      "desktop-legacy",
+      "home",
+      "network",
+      "opengl",
+      "x11"
+    ],
+    "desktop": {
+      "StartupWMClass": "apple-music-for-linux"
+    },
+    "slots": [ 
+      { "mpris": { "name": "chromium" } } 
+    ]
+  }
+}
